@@ -28,6 +28,10 @@ public class P1707_BipartiteGraph {
 			boolean result = true;
 			buildGraph(vertextCnt, edgeCnt);
 			buildStatusArray(vertextCnt);
+			// 1번 정점에서 시작하는 DFS로만 처리하면 안된다.
+			// 연결요소가 존재하는(그래프가 여러 부분으로 분리되어 있는 경우) 경우
+			// 1번 정점과 연결되지 않은 연결 요소가 이분 그래프 요건을 충족시키지 못할수도 있다.
+			// 또한 어떤 정점 간에 간선이 아예 없는 경우도 이분 그래프의 요건을 충족시킨다는 것을 알아둬야한다.
 			for(int i = 1; i <= vertextCnt; i++) {
 				if (statuses[i] == Status.YET) {
 					buildStatusArray(vertextCnt);
