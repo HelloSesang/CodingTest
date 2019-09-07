@@ -1,4 +1,4 @@
-package kakao.blind2018.first;
+package kakao.blind2017.first;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
