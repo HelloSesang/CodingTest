@@ -5,6 +5,9 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+/*
+	브루트포스로 문제 풀이
+ */
 public class P2003_bruteforce {
 
 	public static void main(String[] args) throws Exception {
@@ -16,6 +19,7 @@ public class P2003_bruteforce {
 		System.out.println(getAnswer(target, numbers));
 	}
 
+	// O(n제곱)
 	private static int getAnswer(int target, int[] numbers) {
 		int answer = 0;
 		for (int i = 0, len = numbers.length; i < len; i++) {
