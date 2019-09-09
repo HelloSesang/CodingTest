@@ -1,4 +1,4 @@
-package kakao.blind2019;
+package kakao.blind2019.online;
 
 import java.util.ArrayList;
 import java.util.List;
