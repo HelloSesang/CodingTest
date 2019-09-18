@@ -1,6 +1,6 @@
 package real.tmon;
 
-public class Problem2 {
+public class Problem2 extends Object {
 
 	public static void main(String[] args) {
 		Problem2 problem2 = new Problem2();

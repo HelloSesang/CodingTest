@@ -1,8 +1,10 @@
-package kakao.blind2019.online;// 노래 가사에 사용된 단어들 중에 특정 키워드가 몇 개 포함되어 있는지 궁금
-// 가사에 사용된 모든 단어들이 담긴 배열 words
-// 찾고자 하는 키워드가 담긴 배열 queries
+package kakao.blind2019.online;
 
 import java.util.Arrays;
+
+// 노래 가사에 사용된 단어들 중에 특정 키워드가 몇 개 포함되어 있는지 궁금
+// 가사에 사용된 모든 단어들이 담긴 배열 words
+// 찾고자 하는 키워드가 담긴 배열 queries
 
 public class Problem4 {
 
