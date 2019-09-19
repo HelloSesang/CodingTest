@@ -4,7 +4,7 @@ public class Problem3 {
 
 	public static void main(String[] args) {
 		Problem3 solution = new Problem3();
-		int[][] arr1 = {{0, 0, 0}, {1, 0, 0}, {0, 1, 1}};
+		int[][] arr1 = {{0, 0, 0}, {1, 0, 0}, {1, 0, 1}};
 		int[][] arr2 = {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}};
 		boolean answer = solution.solution(arr1, arr2);
 		System.out.println(answer);
