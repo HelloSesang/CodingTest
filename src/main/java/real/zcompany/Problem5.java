@@ -1,4 +1,4 @@
-package real.zoyi;
+package real.zcompany;
 
 public class Problem5 {
 

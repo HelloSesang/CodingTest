@@ -1,4 +1,4 @@
-package real.tmon;
+package real.tcompany;
 
 public class Problem2 extends Object {
 
