@@ -1,8 +1,13 @@
-/*
-    두개의 테이블이 있다.
-    각각의 play별로 총 예약된 티켓 수을 출력
-    결과 테이블은 id, title, reserved_tickets(총 예약된 티켓 수)을 포함해야한다.
-    결과는 티켓 수를 기준으로 내림차순 정렬
-    그 다음으로는 id를 기준 오름차순 정렬
-*/
+/* 어려운 부분은 없는 문제 */
 
+SELECT A.id,
+       A.title,
+       CASE WHEN B.reserved_tickets is null then 0
+            ELSE B.reserved_tickets
+		END
+  FROM plays A
+  LEFT OUTER JOIN (SELECT play_id,
+                          SUM(number_of_tickets) as reserved_tickets
+                     FROM reservations
+                    GROUP BY play_id) B ON A.id = B.play_id
+ ORDER BY B.reserved_tickets desc, A.id asc;
