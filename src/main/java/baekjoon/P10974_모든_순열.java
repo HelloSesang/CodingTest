@@ -2,34 +2,36 @@ package baekjoon;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
-public class P10973_이전_순열 {
+public class P10974_모든_순열 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		int[] permutation = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-		boolean result = prevPermutation(permutation);
-
-		if (!result) {
-			System.out.println(-1);
-			return;
-		}
+		int[] permutation = new int[n];
 
 		for (int i = 0; i < n; i++) {
-			System.out.print(permutation[i]);
-			if (i + 1 < n) {
-				System.out.print(" ");
-			}
+			permutation[i] = i + 1;
 		}
+
+		do {
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < n; i++) {
+				sb.append(permutation[i]);
+				if (i + 1 < n) {
+					sb.append(" ");
+				}
+			}
+			System.out.println(sb.toString());
+		} while(nextPermutation(permutation));
+
 	}
 
-	private static boolean prevPermutation(int[] sequence) {
+	private static boolean nextPermutation(int[] sequence) {
 		int i = sequence.length - 1;
 
-		// 이전 순열을 만들기 위해 교체해야 할 첫 번째 위치를 찾는다.
-		while (i > 0 && sequence[i-1] <= sequence[i]) {
+		// 다음 순열을 만들기 위해 교체해야 할 첫 번째 위치를 찾는다.
+		while (i > 0 && sequence[i-1] >= sequence[i]) {
 			i--;
 		}
 
@@ -38,9 +40,9 @@ public class P10973_이전_순열 {
 			return false;
 		}
 
-		// 이전 순열을 만들기 위해 교체해야 할 두 번째 위치를 찾는다.
+		// 다음 순열을 만들기 위해 교체해야 할 두 번째 위치를 찾는다.
 		int j = sequence.length-1;
-		while (sequence[j] >= sequence[i-1]) {
+		while (sequence[j] <= sequence[i-1]) {
 			j--;
 		}
 
@@ -49,7 +51,7 @@ public class P10973_이전_순열 {
 		sequence[i-1] = sequence[j];
 		sequence[j] = temp;
 
-		// 뒷자리를 내림차순 정렬해서 이전 순열을 완성한다.
+		// 뒷자리를 오름차순 정렬해서 다음 순열을 완성한다.
 		j = sequence.length - 1;
 		while (i < j) {
 			temp = sequence[i];
