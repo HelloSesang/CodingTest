@@ -23,7 +23,8 @@ public class Problem2_retry {
 				// 두 digram이 다른 경우
 					// 한 칸 더 오른쪽의 digram에 접근한다.
 
-		return 0;
+		// 최종 결과값을 반환한다.
+		return answer;
 	}
 
 }
