@@ -20,12 +20,13 @@ public class 스킬트리 {
 
 				// 현재 문자가 skill_trees의 요소에 없는 경우
 				if (idx == -1) {
-					// 이후 스킬을 익히지 못한다.
+					// 이후 스킬을 익히지 못하도록 -1로 설정한다.
 					beforeIndex = -1;
-					// 탈출한다.
+					// 다음으로 넘어간다.
 					continue;
 				}
 
+				// 선행 스킬을 익히지 않았는데 후행 스킬을 익히려고 하거나, 후행 스킬을 선행 스킬보다 먼저 배우려고하는 경우
 				if ((beforeIndex == -1 && idx != -1) || idx < beforeIndex) {
 					// flag를 false로 변경한다.
 					flag = false;
@@ -38,9 +39,9 @@ public class 스킬트리 {
 				}
 			}
 
-			// flag가 true인 경우
+			// 정상인 경우
 			if (flag) {
-				// answer++;
+				// 정답의 수를 하나 추가한다.
 				answer++;
 			}
 		}
