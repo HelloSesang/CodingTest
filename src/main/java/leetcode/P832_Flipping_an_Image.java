@@ -1,6 +1,7 @@
 package leetcode;
 
 /*
+	교환과 변환을 사용하는 문제
 	horizontally : 배열의 요소를 수평으로 뒤집는다.
 	invert : 1은 0으로 0은 1로 변환한다.
 */
