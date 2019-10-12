@@ -11,17 +11,7 @@ public class Problem2 {
 	}
 
 	public int solution(String[] moves) {
-		List<String> list = new ArrayList<>(Arrays.asList(moves));
 		int answer = 0;
-		boolean flag = true;
-		while(flag) {
-			flag = false;
-			for (int i = 0, len = list.size(); i < len; i++) {
-				list.get(i);
-			}
-		}
-
-
 
 		return answer;
 	}
