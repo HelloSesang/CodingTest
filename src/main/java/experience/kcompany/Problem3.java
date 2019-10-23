@@ -3,6 +3,20 @@ package experience.kcompany;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/*
+	문제)
+	주어진 문자열과 반복횟수를 이용해서 문자열을 압축한 결과를 반환하는 문제
+	반복횟수만큼 반복되는 문자가 문자열 내 존재하지 않을 때까지 계속해서 문자열을 압축한다.
+
+	해결방법)
+	1. 주어진 문자열의 문자에 순차적으로 접근하면서 문자열 스택와 문자 정보 스택에 값을 완성해서 집어넣는다.
+	2. 문자 정보 스택의 값에 따라 문자가 k번 반복된 경우 해당 문자를 문자열 스택에서 제거하고 해당 문자의 문자 정보 스택도 제거한다.
+
+	실수한 부분)
+	최소한 하나의 문자는 남기도록 해야하는데 그 부분에 대한 조건문 처리가 잘못됐다.
+	더 이상 추가할 문자가 없는 상황에서 문자열 스택을 전부 삭제해야되는 경우에 deleteCount를 하나 줄이도록 만들었어야 한다.
+*/
+
 public class Problem3 {
 
 	public static void main(String[] args) {
@@ -39,6 +53,10 @@ public class Problem3 {
 				if (charInfo.count + 1 >= K) {
 					int deleteCount = K - 1;
 					// 최소한 문자 1개를 남기기 위한 처리
+					// 이 부분 잘못한 것 같다.
+					/*if (deleteCount == stringStack.size() && 다음 문자가 없는 경우) {
+
+					}*/
 					if (K == word.length()) {
 						deleteCount--;
 					}

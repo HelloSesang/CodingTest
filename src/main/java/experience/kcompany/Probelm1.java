@@ -2,6 +2,18 @@ package experience.kcompany;
 
 import java.util.*;
 
+/*
+	문제)
+	절반 이상의 발전기를 끄기 위해서 최소 몇 개의 모델을 비활성화 시키면 되는지
+	그 숫자를 반환하는 메서드를 작성하는 문제
+
+	해결방법)
+	1. 발전기 모델별로 몇 개씩 존재하는지 리스트에 담는다.
+	2. 발전기 모델별 갯수를 내림차순으로 정렬한다.
+	3. 숫자가 가장 많은 발전기 모델부터 하나씩 끄면서 절반 이상의 발전기가 꺼졌을 때
+	몇 개의 모델을 껐는지를 반환한다.
+*/
+
 public class Probelm1 {
 
 	public static void main(String[] args) {
