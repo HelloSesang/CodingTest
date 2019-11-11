@@ -41,26 +41,27 @@ public class Problem1 {
 	}
 
 	// 각 문자가 만드는 괄호 스택을 완성
-	static void dealWithChar(char ch, Deque<Character> stack) {
+	static Deque<Character> dealWithChar(char ch, Deque<Character> stack) {
 		if (ch == open1 || ch == open2 || ch == open3) {
 			stack.push(ch);
-			return;
+			return stack;
 		}
 
-		if (ch == close1 && stack.peek() == open1) {
+		if (ch == close1 && !stack.isEmpty() && stack.peek() == open1) {
 			stack.pop();
-			return;
+			return stack;
 		}
-		if (ch == close2 && stack.peek() == open2) {
+		if (ch == close2 && !stack.isEmpty() && stack.peek() == open2) {
 			stack.pop();
-			return;
+			return stack;
 		}
-		if (ch == close3 && stack.peek() == open3) {
+		if (ch == close3 && !stack.isEmpty() && stack.peek() == open3) {
 			stack.pop();
-			return;
+			return stack;
 		}
 
 		stack.push(ch);
+		return stack;
 	}
 
 }
