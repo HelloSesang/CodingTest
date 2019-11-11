@@ -5,13 +5,13 @@ import java.util.Deque;
 
 public class Problem1 {
 
-	private static final char open1 = '(';
-	private static final char open2 = '{';
-	private static final char open3 = '[';
+	private static final char OPEN1 = '(';
+	private static final char OPEN2 = '{';
+	private static final char OPEN3 = '[';
 
-	private static final char close1 = ')';
-	private static final char close2 = '}';
-	private static final char close3 = ']';
+	private static final char CLOSE1 = ')';
+	private static final char CLOSE2 = '}';
+	private static final char CLOSE3 = ']';
 
 	// Complete the braces function below.
 	static String[] braces(String[] values) {
@@ -42,20 +42,20 @@ public class Problem1 {
 
 	// 각 문자가 만드는 괄호 스택을 완성
 	static Deque<Character> dealWithChar(char ch, Deque<Character> stack) {
-		if (ch == open1 || ch == open2 || ch == open3) {
+		if (ch == OPEN1 || ch == OPEN2 || ch == OPEN3) {
 			stack.push(ch);
 			return stack;
 		}
 
-		if (ch == close1 && !stack.isEmpty() && stack.peek() == open1) {
+		if (ch == CLOSE1 && !stack.isEmpty() && stack.peek() == OPEN1) {
 			stack.pop();
 			return stack;
 		}
-		if (ch == close2 && !stack.isEmpty() && stack.peek() == open2) {
+		if (ch == CLOSE2 && !stack.isEmpty() && stack.peek() == OPEN2) {
 			stack.pop();
 			return stack;
 		}
-		if (ch == close3 && !stack.isEmpty() && stack.peek() == open3) {
+		if (ch == CLOSE3 && !stack.isEmpty() && stack.peek() == OPEN3) {
 			stack.pop();
 			return stack;
 		}
