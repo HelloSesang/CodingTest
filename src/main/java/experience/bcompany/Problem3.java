@@ -8,10 +8,10 @@ public class Problem3 {
 	public static int perfectSubstring(String s, int k) {
 		int answer = 0;
 
-		for (int i = 0; i <= s.length() - k; i++) {
+		for (int startIndex = 0; startIndex <= s.length() - k; startIndex++) {
 			ConditionChecker conditionChecker = new ConditionChecker(k);
-			for (int j = i; j < s.length(); j++) {
-				int status = conditionChecker.getStatus(s.charAt(j));
+			for (int presentIndex = startIndex; presentIndex < s.length(); presentIndex++) {
+				int status = conditionChecker.getPresentStatus(s.charAt(presentIndex));
 
 				// 조건을 만족할 수 있는 가능성이 사라진 상태
 				if (status == -1) {
@@ -28,10 +28,6 @@ public class Problem3 {
 		return answer;
 	}
 
-	private static boolean checkSubstring(int startIndex, int endIndex) {
-		return false;
-	}
-
 	static class ConditionChecker {
 
 		private int appearedNumberCount;
@@ -46,7 +42,7 @@ public class Problem3 {
 			this.conditionCount = conditionCount;
 		}
 
-		public int getStatus(char ch) {
+		public int getPresentStatus(char ch) {
 			int numberCount = map.getOrDefault(ch, 0);
 			map.put(ch, numberCount + 1);
 
@@ -58,14 +54,17 @@ public class Problem3 {
 				satisfyCount++;
 			}
 
+			// 조건 충족 가능성이 사라진 상태
 			if (numberCount + 1 > conditionCount) {
 				return -1;
 			}
 
+			// 조건을 충족하지 못한 상태
 			if (satisfyCount != appearedNumberCount) {
 				return 0;
 			}
 
+			// 조건을 충족한 상태
 			return 1;
 		}
 	}
