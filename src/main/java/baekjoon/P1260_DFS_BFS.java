@@ -36,10 +36,10 @@ public class P1260_DFS_BFS {
 		vertexCnt = Integer.parseInt(input[0]);
 		edgeCnt = Integer.parseInt(input[1]);
 		startVertex = Integer.parseInt(input[2]);
-		graph = new ArrayList[vertexCnt + 1];
+		graph = new List[vertexCnt + 1];
 		queue = new ArrayDeque<>();
 		for (int i = 1; i <= vertexCnt; i++) {
-			graph[i] = new ArrayList<>();
+			graph[i] = new ArrayList<Integer>();
 		}
 	}
 
