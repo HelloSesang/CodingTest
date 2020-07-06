@@ -1,4 +1,6 @@
-class Solution {
+package leetcode;
+
+public class P1480_Running_Sum_of_1d_Array {
     public int[] runningSum(int[] nums) {
         int[] result = new int[nums.length];
         for (int i = 0; i < result.length; i++) {
@@ -10,11 +12,5 @@ class Solution {
             result[i] = sum;
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {1,2,3,4};
-        Solution solution = new Solution();
-        solution.runningSum(arr);
     }
 }
