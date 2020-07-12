@@ -1,11 +1,4 @@
-package main
-
-import "fmt"
-
-func main() {
-	arr := []int {1,2,3,1,1,3}
-	fmt.Println(numIdenticalPairs(arr))
-}
+package leetcode
 
 func numIdenticalPairs(nums []int) int {
 	result := 0

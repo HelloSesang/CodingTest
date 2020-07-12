@@ -1,4 +1,6 @@
-class Solution {
+package leetcode;
+
+public class P1512_Number_of_Good_Pairs {
     public int numIdenticalPairs(int[] nums) {
         int result = 0;
         for (int i = 0; i < nums.length - 1; i++) {
@@ -9,11 +11,5 @@ class Solution {
             }
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        int[] arr = {1,1,1,1};
-        System.out.println(solution.numIdenticalPairs(arr));
     }
 }
