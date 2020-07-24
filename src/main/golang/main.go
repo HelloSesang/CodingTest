@@ -1,17 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
-func main() {
-	arr := []int {2,5,1,3,4,7}
-	fmt.Println(shuffle(arr, 3))
+func solve(nums []int, k int) bool {
+	sort.Ints(nums)
+
+	minIdx := 0
+	maxIdx := len(nums) - 1
+
+	for minIdx < maxIdx {
+		sum := nums[minIdx] + nums[maxIdx]
+		if (sum == k) {
+			return true
+		} else if(sum < k) {
+			minIdx++
+		} else if(sum > k) {
+			maxIdx--
+		}
+	}
+	return false
 }
 
-func shuffle(nums []int, n int) []int {
-	var result []int
-	for i := 0; i < n; i++ {
-		result = append(result, nums[i])
-		result = append(result, nums[i + n])
-	}
-	return result
+func main() {
+	nums := []int {10, 36, 22, 14}
+	var k int = 4
+	fmt.Println(solve(nums, k))
 }

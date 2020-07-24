@@ -1,18 +1,12 @@
-import java.util.*;
+package binarysearch;
 
+import java.util.Arrays;
 
-class Solution {
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-
-        int[] nums = {10, 36, 22, 14};
-        int k = 4;
-
-        System.out.println(solution.solve(nums, k));
-    }
+public class Sum_of_Two_Numbers {
 
     public boolean solve(int[] nums, int k) {
         Arrays.sort(nums);
+
         int minIdx = 0;
         int maxIdx = nums.length - 1;
 
@@ -28,4 +22,5 @@ class Solution {
         }
         return false;
     }
+
 }
