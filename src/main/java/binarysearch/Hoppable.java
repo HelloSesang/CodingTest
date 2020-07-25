@@ -1,15 +1,6 @@
-import java.util.*;
+package binarysearch;
 
-
-class Solution {
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-
-        int[] nums = {2, 4, 0, 1, 0};
-
-        System.out.println(solution.solve(nums));
-    }
+public class Hoppable {
 
     public boolean solve(int[] nums) {
         return recursive(0, nums);
@@ -20,11 +11,11 @@ class Solution {
             return true;
         }
 
-        if (nums[index] <= 0) {
+        if (nums[index] == 0) {
             return false;
         }
 
-        for (int i = nums[index]; i > 0 ; i--) {
+        for (int i = 1; i <= nums[index]; i++) {
             if (recursive(index + i, nums)) {
                 return true;
             } else {

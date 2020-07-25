@@ -1,13 +1,6 @@
-package main
+package binarysearch
 
-import "fmt"
-
-func main() {
-	nums := []int {2,4,0,1,0}
-	fmt.Println(solve(nums))
-}
-
-func solve(nums []int) bool {
+func Hoppable(nums []int) bool {
 	return recursive(0, nums)
 }
 
