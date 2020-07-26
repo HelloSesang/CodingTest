@@ -1,13 +1,6 @@
-package main
+package binarysearch
 
-import (
-	"fmt"
-	"strconv"
-)
-
-func main() {
-	fmt.Println(solve(16))
-}
+import "strconv"
 
 func solve(n int) []string {
 	var result = make([]string, n)
