@@ -1,10 +1,6 @@
-import java.util.*;
+package binarysearch;
 
-class Solution {
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(solution.solve(42));
-    }
+public class Palindrome_Integer {
 
     public boolean solve(int num) {
         String numStr = String.valueOf(num);
@@ -18,4 +14,5 @@ class Solution {
         }
         return true;
     }
+
 }

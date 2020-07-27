@@ -2,7 +2,7 @@ package binarysearch
 
 import "strconv"
 
-func solve(n int) []string {
+func P3_6_9(n int) []string {
 	var result = make([]string, n)
 
 	for i := 1; i <= n; i++ {

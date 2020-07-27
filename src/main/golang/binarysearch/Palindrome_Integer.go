@@ -1,15 +1,8 @@
-package main
+package binarysearch
 
-import (
-	"fmt"
-	"strconv"
-)
+import "strconv"
 
-func main() {
-	fmt.Println(solve(121))
-}
-
-func solve(num int) bool {
+func Palindrome_Integer(num int) bool {
 	numStr := strconv.Itoa(num)
 	midIdx := len(numStr) / 2
 	for start, end := 0, len(numStr) - 1; start < midIdx; start++ {
