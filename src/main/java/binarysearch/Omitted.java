@@ -1,13 +1,6 @@
-import java.util.*;
+package binarysearch;
 
-
-class Solution {
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        int[] nums = {0,0};
-        System.out.println(Arrays.toString(solution.solve(nums)));
-    }
+public class Omitted {
 
     public int[] solve(int[] nums) {
         int max = 1;

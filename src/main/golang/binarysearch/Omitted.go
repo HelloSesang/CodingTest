@@ -1,13 +1,6 @@
-package main
+package binarysearch
 
-import "fmt"
-
-func main() {
-	nums := []int {1,2,3,4,5}
-	fmt.Println(solve(nums))
-}
-
-func solve(nums []int) []int {
+func omitted(nums []int) []int {
 	isZeroExist := false
 	zeroCount := 0
 	max := 1
