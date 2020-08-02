@@ -1,11 +1,4 @@
-package main
-
-import "fmt"
-
-func main() {
-	nums := []int {4,2,1}
-	fmt.Println(checkPossibility(nums))
-}
+package leetcode
 
 func checkPossibility(nums []int) bool {
 	for i, len := 0, len(nums); i < len; i++ {
