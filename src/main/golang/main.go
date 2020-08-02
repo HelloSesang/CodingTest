@@ -1,41 +1,23 @@
 package main
 
-import "fmt"
-
+import (
+	"fmt"
+	"strconv"
+)
 func main() {
-	nums := []int {1,2,3,4,5}
-	fmt.Println(solve(nums))
+	var input string
+	_, err := fmt.Scanln(&input);
+	if err != nil {
+		panic(err)
+	}
+
+	number, _ := strconv.Atoi(input)
+	fmt.Println(isOddOrEven(number));
 }
 
-func solve(nums []int) []int {
-	isZeroExist := false
-	zeroCount := 0
-	max := 1
-
-	for i, len := 0, len(nums); i < len; i++ {
-		if nums[i] == 0 {
-			isZeroExist = true
-			zeroCount++
-			continue
-		}
-		max *= nums[i]
+func isOddOrEven(number int) string {
+	if number % 2 == 0 {
+		return "even"
 	}
-
-	result := make([]int, len(nums))
-	for i, len := 0, len(result); i < len; i++ {
-		if isZeroExist {
-			if zeroCount > 1 {
-				result[i] = 0
-			} else {
-				if nums[i] == 0 {
-					result[i] = max
-				} else {
-					result[i] = 0
-				}
-			}
-		} else {
-			result[i] = max / nums[i]
-		}
-	}
-	return result
+	return "odd"
 }

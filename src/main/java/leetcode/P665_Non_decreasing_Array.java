@@ -1,10 +1,6 @@
-class Solution {
+package leetcode;
 
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        int[] nums = {4,2,1};
-        System.out.println(solution.checkPossibility(nums));
-    }
+public class P665_Non_decreasing_Array {
 
     public boolean checkPossibility(int[] nums) {
         for (int i = 0, len = nums.length; i < len; i++) {
