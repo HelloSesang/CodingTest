@@ -1,12 +1,6 @@
-import java.util.Arrays;
+package leetcode;
 
-class Solution {
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        int[] nums = {8,1,2,2,3};
-        System.out.println(Arrays.toString(solution.smallerNumbersThanCurrent(nums)));
-    }
+public class P1365_How_Many_Numbers_Are_Smaller_Than_the_Current_Number {
 
     public int[] smallerNumbersThanCurrent(int[] nums) {
         int[] result = new int[nums.length];
