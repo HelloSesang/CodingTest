@@ -1,15 +1,8 @@
+package leetcode;
+
 import java.util.Arrays;
 
-class Solution {
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-
-        int[] nums1 = {4,1,2};
-        int[] nums2 = {1,3,4,2};
-
-        System.out.println(Arrays.toString(solution.nextGreaterElement(nums1, nums2)));
-    }
+public class P496_Next_Greater_Element_I {
 
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         int[] position = new int[nums1.length];
@@ -36,4 +29,5 @@ class Solution {
 
         return result;
     }
+    
 }
