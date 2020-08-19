@@ -1,13 +1,6 @@
-package main
+package leetcode
 
 import "fmt"
-
-func main() {
-	nums1 := []int {4,1,2}
-	nums2 := []int {1,3,4,2}
-
-	fmt.Println(nextGreaterElement(nums1, nums2))
-}
 
 func nextGreaterElement(nums1 []int, nums2 []int) []int {
 	result := make([]int, len(nums1))
