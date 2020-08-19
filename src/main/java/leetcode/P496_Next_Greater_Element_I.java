@@ -26,8 +26,7 @@ public class P496_Next_Greater_Element_I {
                 }
             }
         }
-
         return result;
     }
-    
+
 }
