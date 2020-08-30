@@ -6,17 +6,17 @@ func P3_6_9(n int) []string {
 	var result = make([]string, n)
 
 	for i := 1; i <= n; i++ {
-		if (checkCondition(i)) {
-			result[i - 1] = "clap"
+		if checkCondition(i) {
+			result[i-1] = "clap"
 		} else {
-			result[i - 1] = strconv.Itoa(i)
+			result[i-1] = strconv.Itoa(i)
 		}
 	}
 	return result
 }
 
 func checkCondition(num int) bool {
-	if num % 3 == 0 {
+	if num%3 == 0 {
 		return true
 	}
 

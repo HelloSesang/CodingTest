@@ -1,4 +1,4 @@
-var nextGreaterElement = function(nums1, nums2) {
+var nextGreaterElement = function (nums1, nums2) {
     let result = [];
 
     for (let i = 0, len = nums1.length; i < len; i++) {
@@ -23,4 +23,4 @@ var nextGreaterElement = function(nums1, nums2) {
     return result;
 };
 
-console.log(nextGreaterElement([4,1,2], [1,3,4,2]));
+console.log(nextGreaterElement([4, 1, 2], [1, 3, 4, 2]));

@@ -26,5 +26,5 @@ public class P3_6_9 {
         }
         return false;
     }
-    
+
 }

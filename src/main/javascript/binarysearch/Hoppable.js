@@ -24,4 +24,4 @@ class Solution {
 }
 
 let solution = new Solution();
-solution.solve([2,4,0,1,0]);
+solution.solve([2, 4, 0, 1, 0]);

@@ -17,52 +17,52 @@ import java.util.StringTokenizer;
 
 public class P1717_unionfind {
 
-	private static int[] rootInfo;
+    private static int[] rootInfo;
 
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		int setCount = Integer.parseInt(st.nextToken());
-		int commandCount = Integer.parseInt(st.nextToken());
-		rootInfo = new int[setCount + 1];
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int setCount = Integer.parseInt(st.nextToken());
+        int commandCount = Integer.parseInt(st.nextToken());
+        rootInfo = new int[setCount + 1];
 
-		// O(n)
-		for (int i = 0; i <= setCount; i++) {
-			rootInfo[i] = i;
-		}
+        // O(n)
+        for (int i = 0; i <= setCount; i++) {
+            rootInfo[i] = i;
+        }
 
-		while (commandCount-- > 0) {
-			st = new StringTokenizer(br.readLine(), " ");
-			String command = st.nextToken();
-			int first = Integer.parseInt(st.nextToken());
-			int second = Integer.parseInt(st.nextToken());
-			if (command.equals("0")) {
-				union(first, second);
-			} else {
-				if (find(first) == find(second)) {
-					System.out.println("YES");
-				} else {
-					System.out.println("NO");
-				}
-			}
-		}
-	}
+        while (commandCount-- > 0) {
+            st = new StringTokenizer(br.readLine(), " ");
+            String command = st.nextToken();
+            int first = Integer.parseInt(st.nextToken());
+            int second = Integer.parseInt(st.nextToken());
+            if (command.equals("0")) {
+                union(first, second);
+            } else {
+                if (find(first) == find(second)) {
+                    System.out.println("YES");
+                } else {
+                    System.out.println("NO");
+                }
+            }
+        }
+    }
 
-	// O(n)
-	private static int find(int target) {
-		if (rootInfo[target] == target) {
-			return target;
-		}
-		rootInfo[target] = find(rootInfo[target]);
-		return rootInfo[target];
-	}
+    // O(n)
+    private static int find(int target) {
+        if (rootInfo[target] == target) {
+            return target;
+        }
+        rootInfo[target] = find(rootInfo[target]);
+        return rootInfo[target];
+    }
 
-	// O(1)
-	private static void union(int first, int second) {
-		if (first == second) return;
-		first = find(first);
-		second = find(second);
-		rootInfo[second] = first;
-	}
+    // O(1)
+    private static void union(int first, int second) {
+        if (first == second) return;
+        first = find(first);
+        second = find(second);
+        rootInfo[second] = first;
+    }
 
 }

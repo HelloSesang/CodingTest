@@ -15,8 +15,8 @@ import java.util.Queue;
 
 public class P14502_연구소 {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-	}
+    }
 
 }

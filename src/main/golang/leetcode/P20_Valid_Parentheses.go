@@ -9,11 +9,11 @@ func (s *Stack) push(something interface{}) {
 }
 
 func (s *Stack) pop() {
-	s.Stack = s.Stack[:len(s.Stack) - 1]
+	s.Stack = s.Stack[:len(s.Stack)-1]
 }
 
 func (s *Stack) peek() interface{} {
-	return s.Stack[len(s.Stack) - 1]
+	return s.Stack[len(s.Stack)-1]
 }
 
 func (s *Stack) len() int {

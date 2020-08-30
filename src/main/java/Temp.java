@@ -17,8 +17,8 @@ class Temp {
         int rest = 0;
         for (int i = 0, len = result.length; i < len; i++) {
             // 김토스가 이토스에게 줘야할 금액이 더 많거나 같은 경우
-                // 이토스에게 안받은 돈이 없는 경우
-                // 이토스에게 안받은 돈이 있는 경우
+            // 이토스에게 안받은 돈이 없는 경우
+            // 이토스에게 안받은 돈이 있는 경우
             // 이토스가 김토스에게 줘야할 금액이 더 많은 경우
             if (kim[i] >= yi[i]) {
                 result[i] = kim[i] - yi[i];
@@ -40,7 +40,7 @@ class Temp {
         StringBuilder sb = new StringBuilder();
         for (int i = 0, len = result.length; i < len; i++) {
             sb.append(result[i]);
-            if (i != len -1) {
+            if (i != len - 1) {
                 sb.append(" ");
             }
         }
@@ -69,7 +69,7 @@ class Temp {
             StringBuilder sb = new StringBuilder();
             for (int i = 0, len = list.size(); i < len; i++) {
                 sb.append(list.get(i));
-                if (i != len -1) {
+                if (i != len - 1) {
                     sb.append(" ");
                 }
             }
@@ -107,9 +107,6 @@ class Temp {
     }
 
 
-
-
-
     public static boolean problem1(String input) {
         for (int i = 0, len = input.length(); i < len; i++) {
             char current = input.charAt(i);
@@ -124,7 +121,7 @@ class Temp {
                 }
             }
 
-            if (i == len -1 && current == '1') {
+            if (i == len - 1 && current == '1') {
                 return false;
             }
         }

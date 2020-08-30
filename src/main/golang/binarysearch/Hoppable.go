@@ -5,7 +5,7 @@ func Hoppable(nums []int) bool {
 }
 
 func recursive(index int, nums []int) bool {
-	if index >= len(nums) - 1 {
+	if index >= len(nums)-1 {
 		return true
 	}
 
@@ -14,10 +14,10 @@ func recursive(index int, nums []int) bool {
 	}
 
 	for i := nums[index]; i > 0; i-- {
-		if recursive(index + i, nums) {
+		if recursive(index+i, nums) {
 			return true
 		} else {
-			nums[index + i] = 0
+			nums[index+i] = 0
 		}
 	}
 	return false

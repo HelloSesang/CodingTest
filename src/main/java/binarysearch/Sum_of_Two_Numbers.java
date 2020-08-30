@@ -10,7 +10,7 @@ public class Sum_of_Two_Numbers {
         int minIdx = 0;
         int maxIdx = nums.length - 1;
 
-        while(minIdx < maxIdx) {
+        while (minIdx < maxIdx) {
             int sum = nums[minIdx] + nums[maxIdx];
             if (sum == k) {
                 return true;

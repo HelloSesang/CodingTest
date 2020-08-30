@@ -10,21 +10,21 @@ import java.util.Map;
 */
 public class InterestingParty {
 
-	public static int getMaximumNumber(String[] first, String[] second) {
+    public static int getMaximumNumber(String[] first, String[] second) {
 
-		Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new HashMap<>();
 
-		for (int i = 0, len = first.length; i < len; i++) {
-			map.put(first[i], map.getOrDefault(first[i], 0) + 1);
-			map.put(second[i], map.getOrDefault(second[i], 0) + 1);
-		}
+        for (int i = 0, len = first.length; i < len; i++) {
+            map.put(first[i], map.getOrDefault(first[i], 0) + 1);
+            map.put(second[i], map.getOrDefault(second[i], 0) + 1);
+        }
 
-		int max = 0;
-		for (String str : map.keySet()) {
-			max = Math.max(map.get(str), max);
-		}
+        int max = 0;
+        for (String str : map.keySet()) {
+            max = Math.max(map.get(str), max);
+        }
 
-		return max;
-	}
+        return max;
+    }
 
 }

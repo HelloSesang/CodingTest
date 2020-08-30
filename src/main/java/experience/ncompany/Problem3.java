@@ -21,43 +21,43 @@ import java.util.List;
 
 public class Problem3 {
 
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		// 플레이어 수
-		int playerCount = Integer.parseInt(br.readLine());
+        // 플레이어 수
+        int playerCount = Integer.parseInt(br.readLine());
 
-		// 뽑은 카드
-		String[] cards = br.readLine().split(" ");
+        // 뽑은 카드
+        String[] cards = br.readLine().split(" ");
 
-		// 팔로워 저장 그래프 초기화
-		List<Integer>[] follower = new ArrayList[playerCount];
-		Arrays.fill(follower, new ArrayList<>());
+        // 팔로워 저장 그래프 초기화
+        List<Integer>[] follower = new ArrayList[playerCount];
+        Arrays.fill(follower, new ArrayList<>());
 
-		// 정답을 담을 배열
-		int[] answer = new int[playerCount];
+        // 정답을 담을 배열
+        int[] answer = new int[playerCount];
 
 
-		for (int i = 0; i < cards.length; i++) {
-			int curPlayer = i % playerCount;
-			switch(cards[i]) {
-				case "A" :
-					answer[i]++;
-					break;
-				case "J" :
-					answer[i - 1 < 0 ? playerCount - 1 : i - 1]++;
-					answer[i + 1 >= playerCount ? 0 : i + 1]++;
-					break;
-				case "Q" :
-					for (int j = 0; j < playerCount; j++) {
-						answer[i]++;
-					}
-					break;
-				case "K" :
-					break;
-			}
-		}
+        for (int i = 0; i < cards.length; i++) {
+            int curPlayer = i % playerCount;
+            switch (cards[i]) {
+                case "A":
+                    answer[i]++;
+                    break;
+                case "J":
+                    answer[i - 1 < 0 ? playerCount - 1 : i - 1]++;
+                    answer[i + 1 >= playerCount ? 0 : i + 1]++;
+                    break;
+                case "Q":
+                    for (int j = 0; j < playerCount; j++) {
+                        answer[i]++;
+                    }
+                    break;
+                case "K":
+                    break;
+            }
+        }
 
-	}
+    }
 
 }

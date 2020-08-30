@@ -18,23 +18,23 @@ func romanToInt(s string) int {
 }
 
 func recursive(i int, runes []rune) int {
-	if i == len(runes) - 1 {
+	if i == len(runes)-1 {
 		return numbers[runes[i]]
 	}
 
-	if i == len(runes) - 2 {
+	if i == len(runes)-2 {
 		temp := 0
-		if numbers[runes[i]] < numbers[runes[i + 1]] {
+		if numbers[runes[i]] < numbers[runes[i+1]] {
 			temp = -numbers[runes[i]]
 		} else {
 			temp = numbers[runes[i]]
 		}
-		return temp + recursive(i + 1, runes)
+		return temp + recursive(i+1, runes)
 	}
 
 	now := numbers[runes[i]]
-	afterOneBlock := numbers[runes[i + 1]]
-	afterTwoBlock := numbers[runes[i + 2]]
+	afterOneBlock := numbers[runes[i+1]]
+	afterTwoBlock := numbers[runes[i+2]]
 	temp := 0
 
 	if now < afterOneBlock || now < afterTwoBlock {
@@ -43,5 +43,5 @@ func recursive(i int, runes []rune) int {
 		temp = now
 	}
 
-	return temp + recursive(i + 1, runes)
+	return temp + recursive(i+1, runes)
 }

@@ -3,33 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	nums1 := []int {4,1,2}
-	nums2 := []int {1,3,4,2}
-
-	fmt.Println(nextGreaterElement(nums1, nums2))
+	arr := []int {1,3,2,4}
+	fmt.Println(SelectionSort(arr))
 }
 
-func nextGreaterElement(nums1 []int, nums2 []int) []int {
-	result := make([]int, len(nums1))
+func SelectionSort(arr []int) []int {
 
-	for i, len, len2 := 0, len(nums1), len(nums2); i < len; i++ {
-		flag := false
-
-		for j := 0; j < len2 ; j++ {
-			if flag && nums1[i] < nums2[j] {
-				result[i] = nums2[j]
-				break
-			}
-
-			if nums1[i] == nums2[j] {
-				flag = true
+	for i := 0; i < len(arr) - 1; i++ {
+		minIdx := i
+		for j := i + 1; j < len(arr); j++ {
+			if (arr[minIdx] > arr[j]) {
+				minIdx = j
 			}
 		}
-
-		if result[i] == 0 {
-			result[i] = -1
-		}
+		arr[i], arr[minIdx] = arr[minIdx], arr[i]
 	}
 
-	return result
+	return arr
 }
+
+

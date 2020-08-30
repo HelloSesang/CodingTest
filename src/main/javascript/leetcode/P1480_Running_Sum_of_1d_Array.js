@@ -1,4 +1,4 @@
-var runningSum = function(nums) {
+var runningSum = function (nums) {
     var result = [];
     for (var i = 0; i < nums.length; i++) {
         var sum = 0;
@@ -11,5 +11,5 @@ var runningSum = function(nums) {
     return result
 };
 
-console.log(runningSum([1,2,3,4]));
+console.log(runningSum([1, 2, 3, 4]));
 

@@ -6,7 +6,7 @@ func maxProfit(prices []int) int {
 	for i := 0; i < len(prices); i++ {
 		if min > prices[i] {
 			min = prices[i]
-		} else if prices[i] - min > max {
+		} else if prices[i]-min > max {
 			max = prices[i] - min
 		}
 	}
@@ -14,5 +14,5 @@ func maxProfit(prices []int) int {
 }
 
 func main() {
-	fmt.Println(maxProfit([]int{7,1,5,3,6,4}))
+	fmt.Println(maxProfit([]int{7, 1, 5, 3, 6, 4}))
 }

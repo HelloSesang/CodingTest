@@ -8,14 +8,14 @@ package kakao.blind2019.online;
 
 public class Problem5 {
 
-	public static void main(String[] args) {
-		Problem5 problem5 = new Problem5();
-		int[][] arr = {{1,0,0,1}, {1,1,1,1}, {2,1,0,1}, {2,2,1,1}, {5,0,0,1}, {5,1,0,1}, {4,2,1,1}, {3,2,1,1}};
-		problem5.solution(5, arr);
-	}
+    public static void main(String[] args) {
+        Problem5 problem5 = new Problem5();
+        int[][] arr = {{1, 0, 0, 1}, {1, 1, 1, 1}, {2, 1, 0, 1}, {2, 2, 1, 1}, {5, 0, 0, 1}, {5, 1, 0, 1}, {4, 2, 1, 1}, {3, 2, 1, 1}};
+        problem5.solution(5, arr);
+    }
 
-	private int[][] solution(int n, int[][] build_frame) {
-		return build_frame;
-	}
+    private int[][] solution(int n, int[][] build_frame) {
+        return build_frame;
+    }
 
 }

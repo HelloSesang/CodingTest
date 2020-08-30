@@ -24,7 +24,7 @@ func longestCommonPrefix(strs []string) string {
 	prefixLen := len(strs[0])
 	for i := 1; i < len(strs); i++ {
 		for j := 0; j < prefixLen; j++ {
-			if strs[0][j] != strs[i][j]{
+			if strs[0][j] != strs[i][j] {
 				prefixLen = j
 			}
 		}

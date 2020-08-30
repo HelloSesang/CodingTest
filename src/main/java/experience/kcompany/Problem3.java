@@ -19,81 +19,81 @@ import java.util.Deque;
 
 public class Problem3 {
 
-	public static void main(String[] args) {
-		String result = compressWord("bbbb", 4);
-		System.out.println(result);
-	}
+    public static void main(String[] args) {
+        String result = compressWord("bbbb", 4);
+        System.out.println(result);
+    }
 
-	public static String compressWord(String word, int K) {
-		// 문자열을 압축하면서 완성해나갈 스택
-		Deque<Character> stringStack = new ArrayDeque<>();
-		// 문자의 출현횟수 정보를 담는 스택
-		Deque<CharInfo> charInfoStack = new ArrayDeque<>();
+    public static String compressWord(String word, int K) {
+        // 문자열을 압축하면서 완성해나갈 스택
+        Deque<Character> stringStack = new ArrayDeque<>();
+        // 문자의 출현횟수 정보를 담는 스택
+        Deque<CharInfo> charInfoStack = new ArrayDeque<>();
 
-		// 문자열에 순차 접근한다.
-		for (char ch : word.toCharArray()) {
-			// 바로 이전에 나타난 문자가 무엇인지 확인
-			char top = ' ';
-			if (stringStack.size() > 0) {
-				top = stringStack.peekLast();
-			}
-			// 다른 문자가 나타난 경우
-			if (top != ch) {
-				// 새로나온 문자를 집어넣는다.
-				stringStack.offerLast(ch);
-				// 문자정보 객체를 생성한다.
-				CharInfo charInfo = new CharInfo(ch, 1);
-				// 문자정보 스택에 담는다.
-				charInfoStack.offerLast(charInfo);
-			// 같은 문자가 나타난 경우
-			} else {
-				// 문자 정보를 찾는다.
-				CharInfo charInfo = charInfoStack.peekLast();
-				// 동일 문자가 K번 이상 반복된 경우
-				if (charInfo.count + 1 >= K) {
-					int deleteCount = K - 1;
-					// 최소한 문자 1개를 남기기 위한 처리
-					// 이 부분 잘못한 것 같다.
+        // 문자열에 순차 접근한다.
+        for (char ch : word.toCharArray()) {
+            // 바로 이전에 나타난 문자가 무엇인지 확인
+            char top = ' ';
+            if (stringStack.size() > 0) {
+                top = stringStack.peekLast();
+            }
+            // 다른 문자가 나타난 경우
+            if (top != ch) {
+                // 새로나온 문자를 집어넣는다.
+                stringStack.offerLast(ch);
+                // 문자정보 객체를 생성한다.
+                CharInfo charInfo = new CharInfo(ch, 1);
+                // 문자정보 스택에 담는다.
+                charInfoStack.offerLast(charInfo);
+                // 같은 문자가 나타난 경우
+            } else {
+                // 문자 정보를 찾는다.
+                CharInfo charInfo = charInfoStack.peekLast();
+                // 동일 문자가 K번 이상 반복된 경우
+                if (charInfo.count + 1 >= K) {
+                    int deleteCount = K - 1;
+                    // 최소한 문자 1개를 남기기 위한 처리
+                    // 이 부분 잘못한 것 같다.
 					/*if (deleteCount == stringStack.size() && 다음 문자가 없는 경우) {
 
 					}*/
-					if (K == word.length()) {
-						deleteCount--;
-					}
-					// 문자 스택에서 K-1개를 제거한다.
-					for (int i = 0; i < deleteCount; i++) {
-						stringStack.pollLast();
-					}
-					// 문자정보 스택에서 1개를 제거한다.
-					charInfoStack.pollLast();
-				// K번 반복되지 않은 경우
-				} else {
-					// 문자 스택에 문자를 추가한다.
-					stringStack.offerLast(ch);
-					// 문자정보 객체의 카운트를 1추가한다.
-					charInfo.count += 1;
-				}
-			}
-		}
-		// 결과 문자열을 만들기 위한 StringBuilder
-		StringBuilder sb = new StringBuilder();
+                    if (K == word.length()) {
+                        deleteCount--;
+                    }
+                    // 문자 스택에서 K-1개를 제거한다.
+                    for (int i = 0; i < deleteCount; i++) {
+                        stringStack.pollLast();
+                    }
+                    // 문자정보 스택에서 1개를 제거한다.
+                    charInfoStack.pollLast();
+                    // K번 반복되지 않은 경우
+                } else {
+                    // 문자 스택에 문자를 추가한다.
+                    stringStack.offerLast(ch);
+                    // 문자정보 객체의 카운트를 1추가한다.
+                    charInfo.count += 1;
+                }
+            }
+        }
+        // 결과 문자열을 만들기 위한 StringBuilder
+        StringBuilder sb = new StringBuilder();
 
-		// 문자 스택이 비어질 때까지 반복
-		while (stringStack.size() > 0) {
-			// 문자를 하나씩 더해 최종 결과를 만든다.
-			sb.insert(0, stringStack.pollLast());
-		}
-		// 최종 결과를 반환한다.
-		return sb.toString();
-	}
+        // 문자 스택이 비어질 때까지 반복
+        while (stringStack.size() > 0) {
+            // 문자를 하나씩 더해 최종 결과를 만든다.
+            sb.insert(0, stringStack.pollLast());
+        }
+        // 최종 결과를 반환한다.
+        return sb.toString();
+    }
 
-	static class CharInfo {
-		public char ch;
-		public int count;
+    static class CharInfo {
+        public char ch;
+        public int count;
 
-		public CharInfo(char ch, int count) {
-			this.ch = ch;
-			this.count = count;
-		}
-	}
+        public CharInfo(char ch, int count) {
+            this.ch = ch;
+            this.count = count;
+        }
+    }
 }

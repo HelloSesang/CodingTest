@@ -34,4 +34,4 @@ class Solution {
 }
 
 solution = new Solution();
-console.log(solution.solve([0,0]));
+console.log(solution.solve([0, 0]));

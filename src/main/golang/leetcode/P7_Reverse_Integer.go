@@ -10,7 +10,7 @@ func reverse(x int) int {
 		result = (result * 10) + (x % 10)
 	}
 
-	if result > int(math.Pow(2, 31) - 1) || result < int(-math.Pow(2, 31))  {
+	if result > int(math.Pow(2, 31)-1) || result < int(-math.Pow(2, 31)) {
 		result = 0
 	}
 

@@ -1,7 +1,7 @@
 package leetcode
 
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 
@@ -25,7 +25,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	} else if l1.Val <= l2.Val {
 		init = l1
 		l1 = l1.Next
-	} else if l2.Val < l1.Val{
+	} else if l2.Val < l1.Val {
 		init = l2
 		l2 = l2.Next
 	}
@@ -55,7 +55,6 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 		now = now.Next
 	}
-
 
 	return head
 }

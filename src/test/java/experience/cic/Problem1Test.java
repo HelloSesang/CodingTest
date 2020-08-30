@@ -7,10 +7,10 @@ import java.util.List;
 
 class Problem1Test {
 
-	@Test
-	void maxStreak() {
-		List<String> list = new ArrayList<>();
-		list.add("Y");
-		System.out.println(Problem1.maxStreak(1, list));
-	}
+    @Test
+    void maxStreak() {
+        List<String> list = new ArrayList<>();
+        list.add("Y");
+        System.out.println(Problem1.maxStreak(1, list));
+    }
 }

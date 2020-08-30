@@ -12,11 +12,11 @@ func Sum_of_Two_Numbers(nums []int, k int) bool {
 
 	for minIdx < maxIdx {
 		sum := nums[minIdx] + nums[maxIdx]
-		if (sum == k) {
+		if sum == k {
 			return true
-		} else if(sum < k) {
+		} else if sum < k {
 			minIdx++
-		} else if(sum > k) {
+		} else if sum > k {
 			maxIdx--
 		}
 	}

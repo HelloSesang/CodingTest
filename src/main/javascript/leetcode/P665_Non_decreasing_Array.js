@@ -1,4 +1,4 @@
-var checkPossibility = function(nums) {
+var checkPossibility = function (nums) {
     for (let i = 0, len = nums.length; i < len; i++) {
         if (isSorted(nums, i)) {
             return true;
@@ -25,4 +25,4 @@ function isSorted(nums, excludedIndex) {
     return true;
 }
 
-console.log(checkPossibility([4,2,1]));
+console.log(checkPossibility([4, 2, 1]));
