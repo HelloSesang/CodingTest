@@ -1,11 +1,6 @@
-import java.util.Arrays;
+package algorithm.sort;
 
-public class Main {
-    public static void main(String[] args) {
-        Main main = new Main();
-        int[] arr = {1,3,4,2};
-        System.out.println(Arrays.toString(main.insertionSort(arr)));
-    }
+public class InsertionSort {
 
     private int[] insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
@@ -23,5 +18,5 @@ public class Main {
 
         return arr;
     }
-
+    
 }
