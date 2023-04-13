@@ -1,4 +1,4 @@
-package inflearn;
+package inflearn.chapter1;
 
 import java.util.Arrays;
 import java.util.Scanner;
