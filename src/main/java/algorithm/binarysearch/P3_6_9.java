@@ -1,4 +1,4 @@
-package binarysearch;
+package algorithm.binarysearch;
 
 public class P3_6_9 {
 

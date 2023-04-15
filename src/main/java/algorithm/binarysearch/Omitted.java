@@ -1,4 +1,4 @@
-package binarysearch;
+package algorithm.binarysearch;
 
 public class Omitted {
 
