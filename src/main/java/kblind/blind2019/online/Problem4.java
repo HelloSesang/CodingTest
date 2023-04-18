@@ -1,4 +1,4 @@
-package kakao.blind2019.online;
+package kblind.blind2019.online;
 
 import java.util.Arrays;
 
@@ -10,7 +10,7 @@ public class Problem4 {
 
     public static void main(String[] args) {
         Problem4 solution = new Problem4();
-        String[] arr1 = {"frodo", "front", "frost", "frozen", "frame", "kakao"};
+        String[] arr1 = {"frodo", "front", "frost", "frozen", "frame", "kblind"};
         String[] arr2 = {"fro??", "????o", "fr???", "fro???", "pro?"};
         System.out.println(Arrays.toString(solution.solution(arr1, arr2)));
     }

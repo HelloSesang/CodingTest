@@ -1,4 +1,4 @@
-package kakao.blind2017.first;
+package kblind.blind2017.first;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

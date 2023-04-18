@@ -1,4 +1,4 @@
-package kakao.blind2019.online;
+package kblind.blind2019.online;
 
 // n * n 정사각형 2차원 가상 벽면
 // 기둥과 보를 이용해 구조물 설치

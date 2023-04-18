@@ -1,4 +1,4 @@
-package kakao.blind2018.online;
+package kblind.blind2018.online;
 
 class Problem4 {
 
